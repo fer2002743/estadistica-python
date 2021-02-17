@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"> 
-  <img src="readme_img/python.png" width="250">
+  <img src="https://banner2.cleanpng.com/20180325/rce/kisspng-python-mysql-yellow-dog-updater-modified-django-d-fierce-python-cliparts-5ab7c9de8053a7.4167643715219942065256.jpg" width="250">
 </div>
 
 #objetivos:
@@ -21,5 +21,5 @@ Por otro lado, la optimizacion nos permite hacer que nuestro programa se ejecute
 
 #Optimizacion de Fibonacci:
 La sucesion de Fibonacci es se trata de una secuencia infinita de números naturales; a partir del 0 y el 1, se van sumando a pares, de manera que cada número es igual a la suma de sus dos anteriores, de manera que:
-                       <div align="center">  ** 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55… **</div>
+                       <div align="center">   0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55… </div>
 La suceson de fibonacci es infeciente porque repetimos el mismo calculo un muchas veces.
