@@ -23,10 +23,10 @@ Es una de las tecnicas mas poderosa para optimizar problemas que cumplen con dos
 
 Por otro lado, la optimizacion nos permite hacer que nuestro programa se ejecute en mucho menos timepo, esto lo conseguimos mediante la memorizacion, lo cual consiste en guardar el resultado de computos anteriores para asi evitar tener que hacer los computos varias veces. Normalmente usamos un diccionario o cualquier estructura de datos que nos permite acceder a estos datos de una manera muy rapida, estas consultas las hacemos en O(1). Sin embargo, esta velocidad tiene un coste, y es que utilizaremos mas espacio en memoria.
 
-#Optimizacion de Fibonacci:
+<h1>Optimizacion de Fibonacci:</h1>
 
 La sucesion de Fibonacci es se trata de una secuencia infinita de números naturales; a partir del 0 y el 1, se van sumando a pares, de manera que cada número es igual a la suma de sus dos anteriores, de manera que:
-                       <div align="center">  **0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55…**</div>
+                       <div align="center">**0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55…**</div>
                        
 La suceson de fibonacci es infeciente porque repetimos el mismo calculo un muchas veces.
 
