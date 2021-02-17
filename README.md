@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"> 
-  <img src="https://banner2.cleanpng.com/20180325/rce/kisspng-python-mysql-yellow-dog-updater-modified-django-d-fierce-python-cliparts-5ab7c9de8053a7.4167643715219942065256.jpg" width="250">
+  <img src="http://assets.stickpng.com/images/5848152fcef1014c0b5e4967.png" width="250">
 </div>
 
 #objetivos:
