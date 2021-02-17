@@ -2,7 +2,7 @@
 </div>
 
 <div align="center"> 
-  <img src="readme_img/python.png" width="250">
+  <img src="http://clipart-library.com/images_k/python-logo-transparent/python-logo-transparent-5.png" width="250">
 </div>
 
 <h1>objetivos:</h1>
