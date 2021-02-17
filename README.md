@@ -3,7 +3,7 @@
 </div>
 
 <div align="center"> 
-  <img src="http://assets.stickpng.com/images/5848152fcef1014c0b5e4967.png" width="250">
+  <img src="https://banner2.cleanpng.com/20180412/kye/kisspng-python-programming-language-computer-programming-language-5acfdc3636bac7.8891188615235717662242.jpg" width="250">
 </div>
 
 #objetivos:
