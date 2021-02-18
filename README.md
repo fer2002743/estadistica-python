@@ -30,3 +30,11 @@ La sucesion de Fibonacci es se trata de una secuencia infinita de números natur
                        
 La suceson de fibonacci es infeciente porque repetimos el mismo calculo un muchas veces.
 
+
+<h1>Caminos aleatorios
+</h1>
+Hasta el momento solo hemos hecho problemas deterministas, en los cuales para el mismo input siempre habia el mismo output. Sin embargo, tiene sus limitaciones para resolver algunos tipos de problemas, como por ejemplo la incorporacion de elementos aleatorios.
+
+Una tipo de simulacion que vamos a estudiar son los caminos aletarios, en la cuales tenemos que elegir dentro de un conjunto de respuestas validas una respuesta aleatoria. En esta simulacion, a diferencia de los problemas deterministas, para cada input probablemente tengamos un output distinto. Un ejemplo en el que se utiliza este tipo de sumulaciones es para simular el comportamiento aleatorio de la bolsa.
+
+
