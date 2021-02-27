@@ -44,4 +44,46 @@ Hasta ahora todos los programas en los que hemos trabajado son deterministicos, 
 
 La programacion estocastica toma partido de las distribuciones de probabilidad, que son el conjunto de todos los resultados posibles que puede tener una variable aleatoria, o en otras palabras, describe el comportamiento de dicha variable dentro de un intervalo de posibles resultados.
 
+<h1>Calculo de probabilidades</h1>
+
+La probabilidad es una medida de la certidumbre que tenemos de si un evento futuro sucedera o no. La probabilidad generalmente se expresa como un numero entre 0 , jamas ocurrira, y 1, ocurrira con certeza. 
+
+A la hora de calcular probabilidades hay que tener un par de reglas presentes:
+
+-**Ley del complemento:** Ley segun la cual la probabilidad de que ocurra un suceso mas la probabilidad de que no ocurra tiene que ser igual a uno.
+
+<div align="center">**P(A) + P(-A) = 1**</div>
+
+-**Ley multiplicativa:** Es la probabilidad de que un evento suceda y otro evento suceda.
+
+<div align="center">**P(A y B) = P(A) * P(B)</div>
+
+-**Ley aditiva:** Es la probabilidad de que A suceda o B suceda.
+
+Calculamos este tipo de probabilidad sumando la probabilidad de los dos acontecimientos si son mutuamente exclusivos, es decir, que solo puede suceder uno a la vez.
+<div align="center">**P(A o B) = P(A) + P(B)**</div>
+
+Por otro lado, si las probabilidades no son exclusivas, es decir, que los dos acontecimientos pueden pasar simultaneamente lo calculamos de esta manera: 
+
+<div align="center">**P(A o B) = P(A) + P(B) - P(A y B)</div>
+
+
+<h1>Inferencia Estadistica</h1>
+
+con simulaciones podemos calcular la probabilidad de eventos complejos sabiendo las probabilidades de ejemplos sencillos, sin embargo, que pasa cuando no sabemos las probabilidades de los eventos sencillos??
+
+En este caso es usar la inferencia estadistica para mediante la muestra de una poblacion cual sera el comportamiento de toda la poblacion. El principio principal de la inferencia estadistica es que la muestra de una poblacion tiende a exhibir el comportamiento de la poblacion original. No obstante, hay que tener en cuenta de que cuando hacemos estas estimaciones nos enfrentamos a un margen de error. Es importante recalcar que la muestra se toma de manera aleatorio porque si de lo contrario estariamos sesgando a la muestra.
+
+Pero, como es que esto es posible??, esto es posible gracias a la ley de los grandes numeros. Segun esta ley cuando ejecutamos muchas veces un mismo evento independiente (cuando tendemos al infinito) la frecuencia de que suceda un cierto evento tiende a ser constante.
+
+**Falacia del apostador:** Segun esta falacia, cuando un evento extremos sucede (ex: sacar veinte veces seguidad un seis en un dado) ocurriran otros eventos menos extremos para nivelar la media (ex: sacar veinte veces un uno). Esto es completamente falso.
+
+Sin embargo, lo que es verdadero es la **regresion a la media** , segun la cual cuando ocurre un evento extremo, el siguiente evento probablementee sera menos extremo.
+
+
+<h1>La Media</h1>
+
+La media es una medida de tendencia central que nos perimite inferir donde se encuentran la mayoria de los valores de la poblacion. La media de una poblacion normalmente se denota μ, mientras que la media de una muestra se denota como x̄.
+
+La media se calcula dividient la suma total de todos los valores por la cantidad de valores.
 
