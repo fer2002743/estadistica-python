@@ -87,3 +87,10 @@ La media es una medida de tendencia central que nos perimite inferir donde se en
 
 La media se calcula dividient la suma total de todos los valores por la cantidad de valores.
 
+<h1>Varianza y desviacion estandar</h1>
+
+La **varianza** y la **desviacion tipica** nos indican que tan separados estan los datos. Siempre que hablamos de varianza y de desviacion tipica en ralacion con la media, es decir, comparandola con la media.
+
+Para calcular la varianza lo que hacemos es calcular la diferencia entre cada valor y la media, elevarlo al cuadrado y hacer el mismo proceso con todos los elements de la muestra. Una vez hemos hecho esto, simplemente dividimos por el tamaño de la muestra.
+
+La desviacion estandar es la raiz cuadrada de la varianza. La ventaja de que sea la raiz cuadrada de la varianza es que nos da la misma unidad que la media (la varianza nos da las unidades al cuadrado), lo que nos permite hacer comparaciones.
