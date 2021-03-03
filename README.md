@@ -114,3 +114,151 @@ Con repescto a la **regla empirica** que nombramos anteriormente debemos saber q
 Las simulaciones de montecarlo es un metodo estadistico utilizado para resolver problemas matematicos complejos mediante la generacion de variables aleatoria. Un metodo estadistico es una secuencia de procedimientos para el manejo de datos cualitativos y cuantitativos en una investigacion.
 
 Las simulaciones de montecarlo nos permite crear simulacones para predecir el resultado de un problema, tambien nos permite convertir un problema deterministico en problemas estocasticos.
+
+<h1>Simulacion de barajas</h1>
+
+import random
+import collections
+
+#generar barajas, las variables las nombre en mayusculas 
+#porque es una convencion
+PALOS = ['espada','corazon','rombo','trebol']
+VALORES = ['as','2','3','4','5','6','7','8','9','10','jota','reina','rey']
+
+#funcion para generar la baraja
+
+def crear_baraja():
+    barajas = [ ]
+
+    for palo in PALOS:
+        for valor in VALORES:
+            barajas.append((palo,valor))
+
+    return barajas
+
+#ahora creamos una funcion para obtener una mano
+def obtener_mano(barajas, tamaño_mano):
+    #la funcion random.sample escoge una muestra aleatorio de barajas
+    #y el tamaño de la mano le indica cuantas barajas vamos
+    #a obtener
+    mano = random.sample(barajas, tamaño_mano)
+    return mano
+#funcion para encontrar las probabilidadeas de los pares en
+#una barja
+def par(valores_acumulados):
+
+    for val in valores_acumulados:
+        if val == 2:
+            return 1
+        #retorna cero al finalizar el ciclo
+        return 0
+
+def main(tamaño_mano, intentos):
+    #creamos una baraja
+    baraja = crear_baraja()
+    #guarda todas las manos que obtengamos en la simulacion
+    manos = [ ]
+    for _ in range(intentos):
+        mano = obtener_mano(baraja, tamaño_mano)
+        manos.append(mano)
+
+
+    #ahora vamos a calcular la probabilidad de que nos salga
+    #un par dentro de una mano de cualquier tamaño
+    # pares = 0
+    
+    for mano in manos:
+        valores = [ ]
+        for carta in mano:
+            valores.append(carta[1])
+
+            counter = dict(collections.Counter(valores))
+        for val in counter.values():
+            #es exactamente dos porque si una carta aparece 
+            #exactamente dos veces es un par
+            if val == 2:
+                pares += 1
+                #si encontramos un par ya dejamos de buscar
+                #porque solo queremos encontrar dos
+                break
+    probabilidad_pares = pares / intentos
+    return f'la probabilidad de encontrar un par dentro de una mano es de {tamaño_mano} barajs es {probabilidad_pares}'
+
+
+if __name__ == '__main__':
+    barajas = crear_baraja()
+    tamaño_mano = int(input('de que tamaño quieres que sea el tamaño de la mano?? '))
+    intentos = int(input('cauntas veces quieres generar la simulaicon?? '))
+    #mano = obtener_mano(barajas, tamaño_mano)
+    print(main(tamaño_mano, intentos))
+
+<h1>Calculo de pi</h1>
+
+import random
+from varianza import desviacion_estandar
+
+
+def aventar_agujas(numero_agujas):
+    
+    dentro_del_circulo = 0
+    
+
+    for _ in range(numero_agujas):
+        #random nos retorna un valor entre cero y uno. Pero 
+        #lo que queremos es obtener es uno o menos uno de forma
+        #aleatoria, para ello lo que hacmeos es que lo multiplicamos 
+        #de forma aletaria por uno o menos uno
+        x = random.random() * random.choice([1,-1])
+        y = random.random() * random.choice([1,-1])
+        distancia_desde_el_centro = (x**2 + y**2)**0.5
+
+        if distancia_desde_el_centro <= 1:
+            dentro_del_circulo += 1
+        # elif distancia_desde_el_centro < 1:
+        #     dentro_cuadrado += 1
+    return (4 * dentro_del_circulo) / numero_agujas 
+
+
+                              #las veces que vamos a correr la simulacion
+def estimacion(numero_agujas, numero_intentos):
+    estimaciones_pi = [ ]
+    for _ in range(numero_intentos):
+        estimacion_pi = aventar_agujas(numero_agujas)
+        estimaciones_pi.append(estimacion_pi)
+
+    media_estimados = sum(estimaciones_pi) / len(estimaciones_pi)
+    sigma = desviacion_estandar(estimaciones_pi)
+    return (media_estimados, sigma)
+
+
+#en esta estimacion le meto una aproximacion al calculo
+def estimar_pi(precision, numero_intentos):
+    numero_agujas = 1000
+    sigma = precision#inicializamos sigma en precision
+
+    while  sigma >= precision/1.96:
+        media, sigma = estimacion(numero_agujas, numero_intentos)
+        numero_agujas *= 2
+    return media
+
+
+
+if __name__ == '__main__':
+    print(estimar_pi(0.01, 10))
+
+
+<h1>Muestreo</h1>
+
+El muestreo es el proceso mediante el cual obtenemos una muestra de una poblacion con la finalidad de estimar valores o corroborar hipótesis. El muestreo es importante cuando por ejemplo no tenemos la capacidad de computo suficiente para hacer todos los calculos.
+
+Es importante saber que las muestras tienden a tener el mismo comportamiento de la poblacion original, gracias a esto podemos llegar a conclusiones validas para la poblacion original.
+
+Hasta ahora el tipo de muestreo que hemos utilizado es el muestreo probabilistico, el cual consiste en seleccionar la muestra de forma aleatoria. Este tipo de muestreo tiene dos formas principales de usarse:
+
+-**En un muestreo aleatorio:** en este tipo de muestreo cualquier miembro de la poblacion puede ser escogido con la misma probabilidad. Este tipo de muestreo lo deberiamos hacer cuando la poblacion tiene caracteristicas similares.
+
+-**En un muestreo estratificado:** en este tipo de muestreo primero se divide a la poblacion en subgrupos para despues seleccionar aleatoriamente a miembros de estos subgrupos. Esto se realiza con la finaidad de evitar sesgos en la investigacion. Este tipo de muestreo lo deberiamos realizar cuando existen subgrupos dentro de nuestra poblacion. 
+
+<h1>Teorema del limite central</h1>
+
+Este teorema nos permite convertir culaquier tipo de distribucion a la distribucion normal. El teorema funciona de la siguiente manera, de una poblacion de la cual no sabemos su distribucion cogemos una muestra de tamaño n y sacamos la media de dicha muestra. Repetimos este proceso unas cuantas veces y como el teorema del limite central me dice que si el tamaño de la muestra es suficientemente grande, la distribucion de esas medias muestrales va a ser aproximadamente la distribucion normal. Esto quiere decir que cuanto mayor sea el tamaño de la muestra, la distribucion de esas medias muestrales va a tender a ser normal con mayor exactitud.

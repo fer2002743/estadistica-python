@@ -48,6 +48,4 @@ def estimar_pi(precision, numero_intentos):
 
 
 if __name__ == '__main__':
-    print(estimar_pi(0.01,10))
-
-#f'la media de realizar {numero_intentos} veces {numero_agujas} agujas tiene como media {media_estimados} con una desviacion estandar de {sigma}', 
+    print(estimar_pi(0.01, 10))
