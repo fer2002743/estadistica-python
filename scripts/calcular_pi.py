@@ -3,8 +3,9 @@ from varianza import desviacion_estandar
 
 
 def aventar_agujas(numero_agujas):
+    
     dentro_del_circulo = 0
-    #dentro_cuadrado = 0
+    
 
     for _ in range(numero_agujas):
         #random nos retorna un valor entre cero y uno. Pero 
@@ -27,13 +28,26 @@ def estimacion(numero_agujas, numero_intentos):
     estimaciones_pi = [ ]
     for _ in range(numero_intentos):
         estimacion_pi = aventar_agujas(numero_agujas)
-        estimaciones_pi.append(estimacion)
+        estimaciones_pi.append(estimacion_pi)
 
     media_estimados = sum(estimaciones_pi) / len(estimaciones_pi)
     sigma = desviacion_estandar(estimaciones_pi)
-    return f'la media de realizar {numero_intentos} veces {numero_agujas} agujas tiene como media {media_estimados} con una desviacion estandar de {sigma}'
+    return (media_estimados, sigma)
+
+
+#en esta estimacion le meto una aproximacion al calculo
+def estimar_pi(precision, numero_intentos):
+    numero_agujas = 1000
+    sigma = precision#inicializamos sigma en precision
+
+    while  sigma >= precision/1.96:
+        media, sigma = estimacion(numero_agujas, numero_intentos)
+        numero_agujas *= 2
+    return media
 
 
 
 if __name__ == '__main__':
-    print(aventar_agujas(10000000))
+    print(estimar_pi(0.01,10))
+
+#f'la media de realizar {numero_intentos} veces {numero_agujas} agujas tiene como media {media_estimados} con una desviacion estandar de {sigma}', 
