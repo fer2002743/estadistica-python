@@ -262,3 +262,10 @@ Hasta ahora el tipo de muestreo que hemos utilizado es el muestreo probabilistic
 <h1>Teorema del limite central</h1>
 
 Este teorema nos permite convertir culaquier tipo de distribucion a la distribucion normal. El teorema funciona de la siguiente manera, de una poblacion de la cual no sabemos su distribucion cogemos una muestra de tamaño n y sacamos la media de dicha muestra. Repetimos este proceso unas cuantas veces y como el teorema del limite central me dice que si el tamaño de la muestra es suficientemente grande, la distribucion de esas medias muestrales va a ser aproximadamente la distribucion normal. Esto quiere decir que cuanto mayor sea el tamaño de la muestra, la distribucion de esas medias muestrales va a tender a ser normal con mayor exactitud.
+
+<h1>¿Cómo trabajar con datos experimentales?</h1>
+
+Los datos experimentales son aquellos que obtenemos al realizar un experimento, los obtenemos mediante el metodo científico. Cuando hablamos del metodo cientifico siempre es necesario empezar con una teoria que queremos validar o demostrar que es falsa. Una vez ya hemos identificado nuestra teoria, el siguiente paso es realizar experimentos que nos permitan verficar o falsear nuestra hipotesis.
+
+<h1>Regresion lineal</h1>
+La regresion lineal es una tecnica que nos permite aproximar una funcion a un conjunto de datos obtenidos de manera experimental.
