@@ -6,7 +6,7 @@
 </div>
 
 <h1>Tabla de contenidos</h1>
--[objetivos](**objetivos**)
+-[objetivos]**objetivos**
 
 <h1>objetivos:</h1>
 
