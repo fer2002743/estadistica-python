@@ -272,7 +272,7 @@ En este caso es usar la inferencia estadistica para mediante la muestra de una p
 
 Pero, como es que esto es posible??, esto es posible gracias a la ley de los grandes numeros. Segun esta ley cuando ejecutamos muchas veces un mismo evento independiente (cuando tendemos al infinito) la frecuencia de que suceda un cierto evento tiende a ser constante.
 
-**Falacia del apostador:** Segun esta falacia, cuando un evento extremos sucede (ex: sacar veinte veces seguidad un seis en un dado) ocurriran otros eventos menos extremos para nivelar la media (ex: sacar veinte veces un uno). Esto es completamente falso.
+**Falacia del apostador:** Segun esta falacia, cuando un evento extremos sucede (ex: sacar veinte veces seguidas un seis en un dado) ocurriran otros eventos menos extremos para nivelar la media (ex: sacar veinte veces un uno). Esto es completamente falso.
 
 Sin embargo, lo que es verdadero es la **regresion a la media** , segun la cual cuando ocurre un evento extremo, el siguiente evento probablementee sera menos extremo.
 
@@ -280,7 +280,7 @@ Sin embargo, lo que es verdadero es la **regresion a la media** , segun la cual 
 
 La media es una medida de tendencia central que nos perimite inferir donde se encuentran la mayoria de los valores de la poblacion. La media de una poblacion normalmente se denota μ, mientras que la media de una muestra se denota como x̄.
 
-La media se calcula dividient la suma total de todos los valores por la cantidad de valores.
+La media se calcula dividiendo la suma total de todos los valores por la cantidad de valores.
 
 El siguiente es un ejemplo de como calcular la media de un conjunto de nuemeros usando Python.
 
