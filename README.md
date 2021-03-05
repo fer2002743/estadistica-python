@@ -1,274 +1,762 @@
-<h2>Programación Dinámica y Estocástica con Python</h2>
+<div align="center">
+  <h1>Programación Dinámica y Estocástica con Python</h1>
 </div>
 
 <div align="center"> 
-  <img src="http://clipart-library.com/images_k/python-logo-transparent/python-logo-transparent-5.png" width="250">
+  <img src="readme_img/python.png" width="250">
 </div>
 
-<h1>Tabla de contenidos</h1>
-<a href = "https://github.com/fer2002743/estadistica-python#objetivos"> 
-- Objetivos</a>
-<h1>objetivos:</h1>
+# Introducción al documento
 
-- Aprender a usar la Programacion Dinamica para hacer mas eficientes los problemas de optimizacion.
-- Sabar como funciona la Programcion Dinamica y cuando usarla
-- enternder la diferencia entre la programcion determinista y la estocastica
+El contenido de este documento esta basado en el curso del mismo nombre dictado por [David Aroesti](https://github.com/jdaroesti) en [Platzi](https://platzi.com/r/karlbehrens/).
 
+# Tabla de contenido
+- [Objetivos](#Objetivos)
+- [Programación Dinámica](#Programación-Dinámica)
+    - [Introducción a la Programación Dinámica](#Introducción-a-la-Programación-Dinámica)
+    - [Optimización de Fibonacci](#Optimización-de-Fibonacci)
+- [Caminos Aleatorios](#Caminos-Aleatorios)
+    - [¿Qué son los caminos aleatorios?](#¿Qué-son-los-caminos-aleatorios?)
+    - [Camino de Borrachos](#Camino-de-Borrachos)
+- [Programas Estocásticos](#Programas-Estocásticos)
+    - [Introducción a la Programación Estocástica](#Introducción-a-la-Programación-Estocástica)
+    - [Cálculo de Probabilidades](#Cálculo-de-Probabilidades)
+    - [Simulación de Probabilidades](#Simulación-de-Probabilidades)
+    - [Inferencia Estadística](#Inferencia-Estadística)
+    - [Media](#Media)
+    - [Varianza y Desviación Estándar](#Varianza-y-Desviación-Estándar)
+    - [Distribución Normal](#Distribución-Normal)
+- [Simulaciones de Montecarlo](#Simulaciones-de-Montecarlo)
+    - [¿Qué son las Simulaciones de Montecarlo?](#¿Qué-son-las-Simulaciones-de-Montecarlo?)
+    - [Simulación de Barajas](#Simulación-de-Barajas)
+    - [Cálculo de PI](#Cálculo-de-PI)
+- [Muestreo e Intervalos de Confianza](#Muestreo-e-Intervalos-de-Confianza)
+    - [Muestreo](#Muestreo)
+    - [Teorema del Límite Central](#Teorema-del-Límite-Central)
+- [Datos Experimentales](#Datos-Experimentales)
+    - [¿Cómo trabajar con datos experimentales?](#¿Cómo-trabajar-con-datos-experimentales?)
+    - [Regresión Lineal](#Regresión-Lineal)
 
-<h1>Introduccion a la programacion dinamica:</h1>
+# Objetivos
+- Aprender cuándo utilizar Programación Dinámica y sus beneficios.
+- Entender la diferencia entre programas deterministas y estocásticos.
+- Aprender a utilizar Programación Estocástica.
+- Aprender a crear simulaciones computacionales válidas.
 
-El nombre de Programcion Dinamica no tiene nada que ver con dinamismo, es simplemente un termino inventado por Richard Bell con la intencion de hacer parecer que su investigacion era la hostia para de esta manera conseguir financiacion del gobierno.
+# Programación Dinámica
 
-Es una de las tecnicas mas poderosa para optimizar problemas que cumplen con dos caracteristicas:
--**Subestructura optima:** Caracteristica que consiste en que podemos solucionar un problema grande mediante la combinacio de soluciones pequeñas.
-
-- **Problemas empalmados:** Es una caracteristica segun la cual resolvemos un mismo problema una y otra y otra vez.
-
-Por otro lado, la optimizacion nos permite hacer que nuestro programa se ejecute en mucho menos timepo, esto lo conseguimos mediante la memorizacion, lo cual consiste en guardar el resultado de computos anteriores para asi evitar tener que hacer los computos varias veces. Normalmente usamos un diccionario o cualquier estructura de datos que nos permite acceder a estos datos de una manera muy rapida, estas consultas las hacemos en O(1). Sin embargo, esta velocidad tiene un coste, y es que utilizaremos mas espacio en memoria.
-
-<h1>Optimizacion de Fibonacci:</h1>
-
-La sucesion de Fibonacci es se trata de una secuencia infinita de números naturales; a partir del 0 y el 1, se van sumando a pares, de manera que cada número es igual a la suma de sus dos anteriores, de manera que:
-                       <div align="center">**0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55…**</div>
-                       
-La suceson de fibonacci es infeciente porque repetimos el mismo calculo un muchas veces.
-
-
-<h1>Caminos aleatorios
-</h1>
-Hasta el momento solo hemos hecho problemas deterministas, en los cuales para el mismo input siempre habia el mismo output. Sin embargo, tiene sus limitaciones para resolver algunos tipos de problemas, como por ejemplo la incorporacion de elementos aleatorios.
-
-Una tipo de simulacion que vamos a estudiar son los caminos aletarios, en la cuales tenemos que elegir dentro de un conjunto de respuestas validas una respuesta aleatoria. En esta simulacion, a diferencia de los problemas deterministas, para cada input probablemente tengamos un output distinto. Un ejemplo en el que se utiliza este tipo de sumulaciones es para simular el comportamiento aleatorio de la bolsa.
-
-
-<h1>Introducción a la Programación Estocástica</h1>
-
-Hasta ahora todos los programas en los que hemos trabajado son deterministicos, es decir, con el mismo input obtengo el mismo output. Sin embargo, hay problemas que no puedo resolver programas deterministicos. En estos casos, podemos usar la programacion estocastica, la cual nos va a permitir introducir aletoriedad en nuestros programas lo que nos permitira resolver problemas mas complejos, como la simulacion en los mercados financieros.
-
-La programacion estocastica toma partido de las distribuciones de probabilidad, que son el conjunto de todos los resultados posibles que puede tener una variable aleatoria, o en otras palabras, describe el comportamiento de dicha variable dentro de un intervalo de posibles resultados.
-
-<h1>Calculo de probabilidades</h1>
-
-La probabilidad es una medida de la certidumbre que tenemos de si un evento futuro sucedera o no. La probabilidad generalmente se expresa como un numero entre 0 , jamas ocurrira, y 1, ocurrira con certeza. 
-
-A la hora de calcular probabilidades hay que tener un par de reglas presentes:
-
--**Ley del complemento:** Ley segun la cual la probabilidad de que ocurra un suceso mas la probabilidad de que no ocurra tiene que ser igual a uno.
-
-<div align="center">**P(A) + P(-A) = 1**</div>
-
--**Ley multiplicativa:** Es la probabilidad de que un evento suceda y otro evento suceda.
-
-<div align="center">**P(A y B) = P(A) * P(B)</div>
-
--**Ley aditiva:** Es la probabilidad de que A suceda o B suceda.
-
-Calculamos este tipo de probabilidad sumando la probabilidad de los dos acontecimientos si son mutuamente exclusivos, es decir, que solo puede suceder uno a la vez.
-<div align="center">**P(A o B) = P(A) + P(B)**</div>
-
-Por otro lado, si las probabilidades no son exclusivas, es decir, que los dos acontecimientos pueden pasar simultaneamente lo calculamos de esta manera: 
-
-<div align="center">**P(A o B) = P(A) + P(B) - P(A y B)</div>
-
-
-<h1>Inferencia Estadistica</h1>
-
-con simulaciones podemos calcular la probabilidad de eventos complejos sabiendo las probabilidades de ejemplos sencillos, sin embargo, que pasa cuando no sabemos las probabilidades de los eventos sencillos??
-
-En este caso es usar la inferencia estadistica para mediante la muestra de una poblacion cual sera el comportamiento de toda la poblacion. El principio principal de la inferencia estadistica es que la muestra de una poblacion tiende a exhibir el comportamiento de la poblacion original. No obstante, hay que tener en cuenta de que cuando hacemos estas estimaciones nos enfrentamos a un margen de error. Es importante recalcar que la muestra se toma de manera aleatorio porque si de lo contrario estariamos sesgando a la muestra.
-
-Pero, como es que esto es posible??, esto es posible gracias a la ley de los grandes numeros. Segun esta ley cuando ejecutamos muchas veces un mismo evento independiente (cuando tendemos al infinito) la frecuencia de que suceda un cierto evento tiende a ser constante.
-
-**Falacia del apostador:** Segun esta falacia, cuando un evento extremos sucede (ex: sacar veinte veces seguidad un seis en un dado) ocurriran otros eventos menos extremos para nivelar la media (ex: sacar veinte veces un uno). Esto es completamente falso.
-
-Sin embargo, lo que es verdadero es la **regresion a la media** , segun la cual cuando ocurre un evento extremo, el siguiente evento probablementee sera menos extremo.
-
-
-<h1>La Media</h1>
-
-La media es una medida de tendencia central que nos perimite inferir donde se encuentran la mayoria de los valores de la poblacion. La media de una poblacion normalmente se denota μ, mientras que la media de una muestra se denota como x̄.
-
-La media se calcula dividient la suma total de todos los valores por la cantidad de valores.
-
-<h1>Varianza y desviacion estandar</h1>
-
-La **varianza** y la **desviacion tipica** nos indican que tan separados estan los datos. Siempre que hablamos de varianza y de desviacion tipica en ralacion con la media, es decir, comparandola con la media.
-
-Para calcular la varianza lo que hacemos es calcular la diferencia entre cada valor y la media, elevarlo al cuadrado y hacer el mismo proceso con todos los elements de la muestra. Una vez hemos hecho esto, simplemente dividimos por el tamaño de la muestra.
-
-La desviacion estandar es la raiz cuadrada de la varianza. La ventaja de que sea la raiz cuadrada de la varianza es que nos da la misma unidad que la media (la varianza nos da las unidades al cuadrado), lo que nos permite hacer comparaciones.
-
-<h1>La distribucion normal</h1>
-
-La distribucion normal es una de las ditribuciones de probabilidad de variable continua que aparece con mayor frecuaencia en estadistica. Las distribuciones de probabilidad son funciones que asigna a cada suceso la probabilidad de que dicho suceso ocurra, y de variable continua se refiere a aquellas variables que puede tomar cualquier valor dentro del numero infinito de valores dentro de un intervalo.
-
-La distribucion normal se puede definir completamente mediante su media y su desviacion estandar, es decir, si sabemos la media y la desviacion estandar podemos calcular la distribucion normal. La distribucion normal nos permite calcular la probabilidad de que algo suceda usando la **regla empirica**, la cual veremos con posterioridad.
+## Introducción a la Programación Dinámica
 
 <div align="center"> 
-  <img src="https://economipedia.com/wp-content/uploads/Captura-de-pantalla-2019-09-10-a-les-11.09.35.png" width="250">
+  <img src="readme_img/bellman.jpg" width="200">
+  <p>Richard Bellman</p>
 </div>
 
-como podemos apreciar en la imagen la distribucion normal es simetrica respecto de su media.
+En la década de los 50s Richard Bellman necesitaba financiamiento del gobierno para poder continuar con sus investigaciones, por lo que necesitaba un nombre rimbombante para que no fueran capaz de rechazar su solicitud, por lo que eligió **programación dinámica**. Las propias palabras de Bellman fueron:
 
-Con repescto a la **regla empirica** que nombramos anteriormente debemos saber que tambien la podemos conocer con la regle 68-95-99,7. Esta regla nos permite analizar como se distribuyen dentro de una distribucion normao los datos, esto lo hacemos analizanado los datos que podemos encontrar a una desviacion tipica de distancia con repecto de la media, a dos desviaciones tipicas y a tres desviaciones tipicas.
+_"[El nombre] Programación Dinámica se escogió para esconder a patrocinadores gubernamentales el hecho que en realidad estaba haciendo Matemáticas. La frase Programación Dinámica es algo que ningún congresista puede oponerse."_ - Richard Bellman.
 
-<h1>Simulaciones de montecarlo</h1>
+Ya sabiendo que **Programación Dinámica** no esta relacionado con su nombre, lo cierto es que si es una de las técnicas mas poderosas para poder optimizar cierto tipos de problemas.
 
-Las simulaciones de montecarlo es un metodo estadistico utilizado para resolver problemas matematicos complejos mediante la generacion de variables aleatoria. Un metodo estadistico es una secuencia de procedimientos para el manejo de datos cualitativos y cuantitativos en una investigacion.
+Los problemas que puede optimizar son aquellos que tienen una **subestructura óptima**, esto significa que una **solución óptima global** se puede encontrar al combinar **soluciones óptimas de subproblemas locales.**
 
-Las simulaciones de montecarlo nos permite crear simulacones para predecir el resultado de un problema, tambien nos permite convertir un problema deterministico en problemas estocasticos.
+También nos podemos encontrar con los **problemas empalmados**, los cuales implican resolver el mismo problema en varias ocasiones para dar con una solución óptima.
 
-<h1>Simulacion de barajas</h1>
+Una técnica para obtener una alta velocidad en nuestro programa es la **Memorización**, el cual consiste en guardar cómputos previos y evitar realizarlos nuevamente. Normalmente se utiliza un diccionario, donde las consultas se pueden hacer en `O(1)`, y para ello hacemos un cambio de _tiempo por espacio._
 
+## Optimización de Fibonacci
+
+La serie de _Fibonacci_ se representa como `Fn = Fn-1 + Fn-2` y es muy simple implementarla de forma recursiva en código. Sin embargo es muy ineficiente hacerlo simplemente recursivo, ya que repetimos varias veces el mismo computo.
+
+<div align="center"> 
+  <img src="readme_img/fibonnaci-algoritmo.jpeg" width="80%">
+  <p>Algoritmo de Fibonnaci</p>
+</div>
+
+Si te fijas en la imagen te darás cuenta de que repetimos varias veces el calculo para `f(4), f(3), f(2), f(1) y f(0)`, esto significa que nuestro algoritmo crece de forma **exponencial** `O(2^n)`.
+
+Para optimizar nuestro algoritmo implementaremos en primer lugar la **función recursiva** para luego dar paso a la **memorización**, con esto las mejoras serán realmente sorprendentes.
+
+```py
+# Importamos la librería sys para subir el limite de recursividad de Python.
+import sys
+
+# La función recursiva realiza varias veces los mismos cálculos.
+def fibonacci_recursivo(n):
+    if n == 0 or n == 1:
+        return 1
+
+    return fibonacci_recursivo(n - 1) + fibonacci_recursivo(n - 2)
+
+
+# En cambio en la función dinámica vamos a utilizar la técnica de la
+# memorización, guardando los resultados ya hechos en un diccionario.
+def fibonacci_dinamico(n, memo = {}):
+    if n == 0 or n == 1:
+        return 1
+
+
+    # Primero intentamos buscar el resultado en memoria.
+    try:
+        return memo[n]
+
+    # En caso de no existir realizamos el cálculo.
+    except KeyError:
+        resultado = fibonacci_dinamico(n - 1, memo) + fibonacci_dinamico(n - 2, memo)
+        memo[n] = resultado
+
+        return resultado
+
+if __name__ == '__main__':
+    sys.setrecursionlimit(10002)
+    n = int(input('Escoge un numero: '))
+    resultado = fibonacci_dinamico(n)
+    print(resultado)
+```
+
+# Caminos Aleatorios
+
+## ¿Qué son los caminos aleatorios?
+
+Los **caminos aleatorios** son un tipo de simulación que elige aleatoriamente una decisión dentro de un conjunto de decisiones válidas. Se utiliza en muchos campos del conocimiento cuando los sistemas **no son deterministas** e incluyen **elementos de aleatoriedad**.
+
+## Camino de Borrachos
+
+Este es un ejercicio donde empezando desde un punto 0 **aleatoriamente** podemos decidir que dirección tomar, dependiendo de las opciones establecidas.
+
+<div align="center"> 
+  <img src="readme_img/random-walk-1.gif" height="250">
+</div>
+
+Para realizar un ejemplo de aleatoriedad vamos a crear un programa que representara el problema del "Camino de Borrachos". Para esto crearemos 3 clases: uno que represente al **agente que camina**, una que genere una **abstracción de las coordenadas** y una que represente el **plano** en el cual nos estamos moviendo, y vamos a graficar la distancia en la que termina nuestro agente a medida que definimos una mayor cantidad de pasos que puede dar. 
+
+Primero crearemos un ambiente virtual, para ello vamos a la terminar.
+
+```bash
+mkdir camino_de_borramos    # Creamos una carpeta para nuestro proyecto.
+cd camino_de_borrachos      # Ingresamos a la carpeta.
+python3 -m venv env         # Creamos nuestro ambiente virtual.
+source env/bin/activate     # Activamos nuestro ambiente.
+pip install bokeh           # Instalamos el paquete de bokeh para generar nuestra gráfica.
+```
+
+Luego de haber creado nuestro entorno de trabajo creamos los siguientes archivos en nuestra carpeta.
+
+```py
+# Creamos un archivo borracho.py
+import random
+
+# Creamos nuestra Clase borracho.
+class Borracho:
+
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+
+# Creamos la clase BorrachoTradicional que extiende de Borracho.
+class BorrachoTradicional(Borracho):
+
+    def __init__(self, nombre):
+        super().__init__(nombre)
+
+    # Y tendrá un método caminar que devolverá la dirección a la que ira.
+    def camina(self):
+        # Con random.choice elegimos un elemento aleatoriamente de la lista.
+        return random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
+```
+
+```py
+# Creamos un archivo coordenada.py
+
+# La clase Coordenada guardara las coordenadas de nuestro agente
+class Coordenada:
+
+    # Definimos unas posiciones iniciales.
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    # Y cuando se mueve simplemente a las coordenadas actuales se les
+    # suma las coordenadas X e Y que ingresan como parámetros.
+    def mover(self, delta_x, delta_y):
+        return Coordenada(self.x + delta_x, self.y + delta_y)
+
+
+    # Y si queremos saber la distancia del agente con respecto a
+    # unas coordenadas, simplemente lo calculamos con el
+    # teorema de Pitágoras.
+    def distancia(self, otra_coordenada):
+        delta_x = self.x - otra_coordenada.x 
+        delta_y = self.y - otra_coordenada.y 
+
+        return (delta_x**2 + delta_y**2)**0.5
+```
+
+```py
+# Creamos un archivo campo.py
+class Campo:
+
+    # Nuestra clase tendrá como atributo un diccionario.
+    def __init__(self):
+        self.coordenadas_de_borrachos = {}
+
+
+    # Añadimos un agente a nuestro diccionario, nuestra llave sera
+    # nuestro parámetro "borracho" y tendrá el valor asignado "coordenada"
+    # que es una clase Coordenada creado en coordenada.py.
+    def anadir_borracho(self, borracho, coordenada):
+        self.coordenadas_de_borrachos[borracho] = coordenada
+
+
+    def mover_borracho(self, borracho):
+        # Al mover a nuestro agente ejecutamos el método camina de
+        # nuestra clase BorrachoTradicional creado en el archivo borracho.py,
+        # devolviendo la dirección hacia donde se movió.
+        delta_x, delta_y = borracho.camina()
+
+        # Obtenemos el objeto de Coordenada.
+        coordenada_actual = self.coordenadas_de_borrachos[borracho]
+
+        # Del objeto Coordenada ejecutamos el método mover con los parámetros
+        # que el objeto borracho genero. El resultado lo guardamos en
+        # nueva_coordenada.
+        nueva_coordenada = coordenada_actual.mover(delta_x, delta_y)
+
+        # El objeto guardado en nueva_coordenada ahora estará asociado
+        # a la llave de borracho.
+        self.coordenadas_de_borrachos[borracho] = nueva_coordenada
+
+
+    def obtener_coordenada(self, borracho):
+        return self.coordenadas_de_borrachos[borracho]
+```
+
+```py
+# Creamos el archivo camino_aleatorio.py
+
+# Importamos las clases que creamos anteriormente.
+from borracho import BorrachoTradicional
+from campo import Campo
+from coordenada import Coordenada
+
+# Importamos bokeh para generar un gráfico con nuestros resultados.
+from bokeh.plotting import figure, show
+
+
+def caminata(campo, borracho, pasos):
+    # De la instancia Campo obtenemos las coordenadas actuales de la llave "borracho".
+    inicio = campo.obtener_coordenada(borracho)
+
+    # Repetiremos la misma cantidad de pasos definidos.
+    for _ in range(pasos):
+
+        # De la instancia campo ejecutaremos mover_borracho.
+        campo.mover_borracho(borracho)
+
+    # Y devolveremos la distancia entre las coordenadas de la instancia
+    # inicio y campo.
+    return inicio.distancia(campo.obtener_coordenada(borracho))
+
+
+def simular_caminata(pasos, numero_de_intentos, tipo_de_borracho):
+
+    # Definimos los parámetros para crear una instancia de Campo.
+    borracho = tipo_de_borracho(nombre='Karl')
+    origen = Coordenada(0, 0)
+
+    # Creamos una lista que guardara las distancias en cada simulación.
+    distancias = []
+
+    # Por cada numero de intento.
+    for _ in range(numero_de_intentos):
+
+        # Creamos una instancia de Campo.
+        campo = Campo()
+
+        # A nuestra instancia de Campo le damos la llave borracho y sus coordenadas de origen.
+        campo.anadir_borracho(borracho, origen)
+
+        # Obtenemos la distancia final de la simulación.
+        simulacion_caminata = caminata(campo, borracho, pasos)
+
+        # El resultado lo guardamos en la lista de distancias.
+        distancias.append(round(simulacion_caminata, 1))
+    
+    # Retornamos la lista de distancias.
+    return distancias
+
+
+def graficar(x, y):
+    # Creamos una instancia de figure, con su titulo y las etiquetas de los ejes.
+    grafica = figure(title='Camino aleatorio', x_axis_label='pasos', y_axis_label='distancia')
+
+    # Ingresamos los datos de X e Y.
+    grafica.line(x, y, legend='distancia media')
+
+    # Generamos una gráfica en HTML.
+    show(grafica)
+
+
+def main(distancias_de_caminata, numero_de_intentos, tipo_de_borracho):
+
+    # Creamos una lista que guardara el promedio de cada caminata.
+    distancias_media_por_caminata = []
+
+    # Por cada ítem en nuestras series de caminata.
+    for pasos in distancias_de_caminata:
+
+        # Guardamos las distancias que generan todas las simulaciones definido en numero_de_intentos.
+        distancias = simular_caminata(pasos, numero_de_intentos, tipo_de_borracho)
+
+        # De la lista de distancias obtenemos la distancia promedio.
+        distancia_media = round(sum(distancias) / len(distancias), 4)
+
+        # De la lista de distancias obtenemos el máximo valor.
+        distancia_maxima = max(distancias)
+
+        # De la lista de distancias obtenemos el menor valor.
+        distancia_minima = min(distancias)
+
+        # Guardamos el promedio de la caminata en la lista distancias_media_por_caminata.
+        distancias_media_por_caminata.append(distancia_media)
+
+        # Imprimimos los datos de la caminata actual.
+        print(f'{tipo_de_borracho.__name__} caminata aleatoria de {pasos} pasos')
+        print(f'Media = {distancia_media}')
+        print(f'Max = {distancia_maxima}')
+        print(f'Min = {distancia_minima}')
+
+    # Generamos un gráfico con la información de las distancias finales según la cantidad de pasos.
+    graficar(distancias_de_caminata, distancias_media_por_caminata)
+
+if __name__ == '__main__':
+    # Definamos cuantos pasos queremos que camine en cada serie.
+    distancias_de_caminata = [10, 100, 1000, 10000]
+    
+    # Determinamos la cantidad de simulaciones que generara en cada serie.
+    numero_de_intentos = 100
+
+    # Ejecutamos el método main con los parámetros definidos anteriormente
+    # y además pasamos la clase BorrachoTradicional
+    main(distancias_de_caminata, numero_de_intentos, BorrachoTradicional)
+```
+
+Dentro el pensamiento **estocástico** debemos realizar varias simulaciones, por ese motivo en el ejemplo anterior realizamos varios intentos. Lo importante de esta aleatoriedad es que podemos distribuirla a lo largo de varios intentos, con esto podemos obtener certeza de que el comportamiento de nuestro programa se comporte en que esperamos estadísticamente.
+
+Para ejecutar nuestro programa iremos nuevamente a la consola.
+
+```bash
+python3 camino_aleatorio.py     # Ejecutamos nuestro programa
+
+# Y veremos nuestros resultados:
+
+BorrachoTradicional caminata aleatoria de 10 pasos
+Media = 2.639
+Max = 6.3
+Min = 0.0
+BorrachoTradicional caminata aleatoria de 100 pasos
+Media = 8.914
+Max = 23.5
+Min = 1.4
+BorrachoTradicional caminata aleatoria de 1000 pasos
+Media = 28.58
+Max = 73.8
+Min = 2.0
+BorrachoTradicional caminata aleatoria de 10000 pasos
+Media = 86.012
+Max = 241.3
+Min = 22.4
+```
+
+Y nuestra gráfica en HTML se vera así.
+
+<div align="center"> 
+  <img src="readme_img/random-walk-chart.png" width="70%">
+</div>
+
+# Programas Estocásticos
+
+## Introducción a la Programación Estocástica
+
+Un programa es **determinístico** cuando se corre con un mismo _input_ produce el mismo _output_. Los programas **determinísticos** son muy importantes, pero existen problemas que no pueden resolverse de esa manera.
+
+La **programación estocástica** permite introducir aleatoriedad a nuestros programas para crear simulaciones que permiten resolver otro tipo de problemas. Los **programas estocásticos** se aprovechan de que las **distribuciones probabilísticas** de un problema se conocen o pueden ser estimadas.
+
+## Cálculo de Probabilidades
+
+La **probabilidad** es una medida de la certidumbre asociada a un evento o suceso futuro y suele expresarse como un número entre 0 y 1. Una **probabilidad** de 0 significa que un suceso jamás sucederá, y en su contraparte una **probabilidad** de 1 significa que está garantizado que sucederá.
+
+Al hablar de **probabilidad** preguntamos qué fracción de todos los posibles eventos tiene la propiedad que buscamos, por eso es importante poder calcular todas las posibilidades de un evento para entender su probabilidad. La probabilidad de que un **evento suceda** y de que **no suceda** es siempre **1**.
+
+- Ley del complemento:
+    - P(A) + P(~A) = 1
+
+- Ley multiplicativa:
+    - P(A y B) = P(A) * P(B)
+
+- Ley aditiva:
+    - Mutuamente exclusivos: P(A o B) = P(A) + P(B)
+
+    - No exclusivos: P(A o B) = P(A) + P(B) - P(A y B)
+    
+
+
+Para ver un ejemplo práctico de las leyes anteriores vamos a realizar un ejercicio de el lanzamiento de un dado de 6 caras:
+
+- La probabilidad de que salga el número **1**:
+    
+    Tenemos **6** posibilidades y el número **1** es una de ellas, por lo que la probabilidad es **1/6**.
+
+- La probabilidad de que nos toque el numero **1 o 2:**
+
+    Tenemos **6** posibilidades y el número **1** es una de ellas y el **2** es otra. El que nos toque un número es **mutuamente exclusivo**, ya que no podemos obtener 2 números al mismo tiempo. Bajo esta premisa utilizaremos la **ley aditiva mutuamente exclusiva.**
+
+    `P(1 o 2) = P(1) + P(2) `
+
+    `P(1 o 2) = 1/6 + 1/6`
+
+    `P(1 o 2) = 2/6`
+
+- La probabilidad de que nos salga el número **1** al menos **1 vez** en **10 lanzamientos**:
+
+    Para cada lanzamiento tenemos la posibilidad de **1/6** de que nos toque **1**, por lo que utilizamos la **ley multiplicativa.**
+
+    `(1/6)^10 = 0.8333`
+
+## Simulación de Probabilidades
+
+En el siguiente ejercicio crearemos un ejemplo de lanzar un dado de 6 caras, esto con el objetivo de obtener la distribución de probabilidades y acercarnos al numero correcto, aplicando la **ley de los grandes números.**
+
+```py
+import random
+
+def tirar_dado(numero_de_tiros):
+    secuencia_de_tiros = []
+
+    for _ in range(numero_de_tiros):
+        tiro = random.choice([1, 2, 3, 4, 5, 6])
+        secuencia_de_tiros.append(tiro)
+
+    return secuencia_de_tiros
+
+def main(numero_de_tiros, numero_de_intentos):
+    tiros = []
+    for _ in range(numero_de_intentos):
+        secuencia_de_tiros = tirar_dado(numero_de_tiros)
+        tiros.append(secuencia_de_tiros)
+
+    tiros_con_1 = 0
+    for tiro in tiros:
+        if 1 not in tiro:
+            tiros_con_1 += 1 
+
+    probabilidad_tiros_con_1 = tiros_con_1 / numero_de_intentos
+    print(f'Probabilidad de no obtener por lo menos un 1 en {numero_de_tiros} tiros = {probabilidad_tiros_con_1}')
+
+
+
+if __name__ == '__main__':
+    numero_de_tiros = int(input('Cuantas tiros del dado: '))
+    numero_de_intentos = int(input('Cuantas veces correra la simulacion: '))
+
+    main(numero_de_tiros, numero_de_intentos)
+```
+
+## Inferencia Estadística
+
+Con las simulaciones podemos calcular las probabilidades de eventos complejos sabiendo las probabilidades de eventos simples.
+
+¿Que pasa cuando no sabemos las probabilidades de los eventos simples? Las técnicas de la **inferencia estadística** nos permiten inferir/concluir las propiedades de una población a partir de una muestra **aleatoria.**
+
+_"El principio guía de la **inferencia estadística** es que una muestra aleatoria tiende a exhibir las mismas propiedades que la población de la cual fue extraída."_ - John Guttag
+
+<div align="center"> 
+  <img src="readme_img/poblacion-muestra.jpeg" width="40%">
+</div>
+
+### Ley de los grandes números
+
+Con la **ley de los grandes números** podemos ver que en pruebas independientes repetidas con la misma probabilidad p de un resultado, la fracción de desviaciones de p converge a cero conforme la cantidad de pruebas se acerca al infinito.
+
+<div align="center"> 
+  <img src="readme_img/grandes-numeros.png" width="30%">
+</div>
+
+### Falacia del apostador
+
+La **falacia del apostador** señala que después de un evento extremo, ocurrirán eventos menos extremos para nivelar la media.
+
+La _regresion a la media_ señala que después de un evento aleatorio extremo, el siguiente evento probablemente será menos extremo.
+
+## Media
+
+La **media** es una medida de tendencia central, comúnmente conocido como promedio. La media de una población se denota con el símbolo μ y la media de una muestra se define con X̄.
+
+<div align="center"> 
+  <img src="readme_img/promedio.png" width="30%">
+</div>
+
+Una forma de calcular la media con Python seria la siguiente.
+
+```py
+import random
+
+def media(X):
+    return sum(X) / len(X)
+
+if __name__ == '__main__':
+    X = [random.randint(9, 12) for i in range(20)]
+    mu = media(X)
+
+    print(f'Arreglo X: {X}')
+    print(f'Media = {mu}')
+```
+
+## Varianza y Desviación Estándar
+
+### Varianza
+
+La **varianza** mide qué tan propagados se encuentran un conjunto de valores aleatorios de su media. Mientras que la **media** nos da una idea de dónde se encuentran los valores, la **varianza** nos dice que tan dispersos se encuentran. La **varianza** siempre debe entenderse con respecto a la media.
+
+<div align="center"> 
+  <img src="readme_img/varianza.png" width="30%">
+</div>
+
+### Desviación estándar
+
+La **desviación estándar** es la raíz cuadrada de la **varianza**. Nos permite entender, también, la propagación y se debe entender siempre relacionado con la **media**.
+
+La ventaja sobre la **varianza** es que la desviación estándar está en las mismas unidades que la **media**.
+
+<div align="center"> 
+  <img src="readme_img/desviacion-estandar.png" width="30%">
+</div>
+
+Vamos a implementar las funciones de **varianza** y **desviación estándar** en nuestro script ya hecho para la **media.**
+
+```py
+import random
+import math
+
+def media(X):
+    return sum(X) / len(X)
+
+
+def varianza(X):
+    mu = media(X)
+
+    acumulador = 0
+    for x in X:
+        acumulador += (x - mu)**2
+
+    return acumulador / len(X)
+
+
+def desviacion_estandar(X):
+    return math.sqrt(varianza(X))
+
+
+if __name__ == '__main__':
+    X = [random.randint(9, 12) for i in range(20)]
+    mu = media(X)
+    Var = varianza(X)
+    sigma = desviacion_estandar(X)
+
+    print(f'Arreglo X: {X}')
+    print(f'Media = {mu}')
+    print(f'Varianza = {Var}')
+    print(f'Desviacion estandar = {sigma}')
+```
+
+## Distribución Normal
+
+La **distribución normal** es una de las distribuciones mas recurrentes en cualquier ámbito. Se define completamente por su **media** y su **desviación estándar**. Permite calcular **intervalos de confianza** con la regla empírica.
+
+<div align="center"> 
+  <img src="readme_img/distribucion-normal.png" width="30%">
+</div>
+
+En el siguiente ejemplo vamos una unas distribuciones con desviación estándar 1 y 3. Cuando la desviación es baja significa la variabilidad de los datos es menor.
+
+<div align="center"> 
+  <img src="readme_img/variation-samples.webp" width="60%">
+</div>
+
+### Regla empírica
+
+También conocida como la regla 68-95-99.7. Señala cuál es la dispersión de los datos en una distribución normal a uno, dos y tres sigmas.
+
+Permite calcular probabilidades con la densidad de la distribución normal.
+
+<div align="center"> 
+  <img src="readme_img/regla-empirica.png" width="30%">
+</div>
+
+<div align="center"> 
+  <img src="readme_img/distribucion-normal-grafico.png" width="70%">
+</div>
+
+# Simulaciones de Montecarlo
+
+## ¿Qué son las Simulaciones de Montecarlo?
+
+Permite crear simulaciones para predecir el resultado de un problema, además de convertir problemas determinísticos en problemas estocásticos.
+
+Es utilizado en gran diversidad de áreas, desde la ingeniería hasta la biología y el derecho.
+
+## Simulación de Barajas
+
+```py
 import random
 import collections
 
-#generar barajas, las variables las nombre en mayusculas 
-#porque es una convencion
-PALOS = ['espada','corazon','rombo','trebol']
-VALORES = ['as','2','3','4','5','6','7','8','9','10','jota','reina','rey']
-
-#funcion para generar la baraja
+PALOS = ['espada', 'corazon', 'rombo', 'trebol']
+VALORES = ['as', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jota', 'reina', 'rey']
 
 def crear_baraja():
-    barajas = [ ]
-
+    barajas = []
     for palo in PALOS:
         for valor in VALORES:
-            barajas.append((palo,valor))
+            barajas.append((palo, valor))
 
     return barajas
 
-#ahora creamos una funcion para obtener una mano
-def obtener_mano(barajas, tamaño_mano):
-    #la funcion random.sample escoge una muestra aleatorio de barajas
-    #y el tamaño de la mano le indica cuantas barajas vamos
-    #a obtener
-    mano = random.sample(barajas, tamaño_mano)
+def obtener_mano(barajas, tamano_mano):
+    mano = random.sample(barajas, tamano_mano)
+    
     return mano
-#funcion para encontrar las probabilidadeas de los pares en
-#una barja
-def par(valores_acumulados):
 
-    for val in valores_acumulados:
-        if val == 2:
-            return 1
-        #retorna cero al finalizar el ciclo
-        return 0
+def main(tamano_mano, intentos):
+    barajas = crear_baraja()
 
-def main(tamaño_mano, intentos):
-    #creamos una baraja
-    baraja = crear_baraja()
-    #guarda todas las manos que obtengamos en la simulacion
-    manos = [ ]
+    manos = []
     for _ in range(intentos):
-        mano = obtener_mano(baraja, tamaño_mano)
+        mano = obtener_mano(barajas, tamano_mano)
         manos.append(mano)
 
-
-    #ahora vamos a calcular la probabilidad de que nos salga
-    #un par dentro de una mano de cualquier tamaño
-    # pares = 0
-    
+    pares = 0
     for mano in manos:
-        valores = [ ]
+        valores = []
         for carta in mano:
             valores.append(carta[1])
 
-            counter = dict(collections.Counter(valores))
+        counter = dict(collections.Counter(valores))
         for val in counter.values():
-            #es exactamente dos porque si una carta aparece 
-            #exactamente dos veces es un par
-            if val == 2:
+            if val == 3:
                 pares += 1
-                #si encontramos un par ya dejamos de buscar
-                #porque solo queremos encontrar dos
                 break
-    probabilidad_pares = pares / intentos
-    return f'la probabilidad de encontrar un par dentro de una mano es de {tamaño_mano} barajs es {probabilidad_pares}'
+
+    probabilidad_par = pares / intentos
+    print(f'La probabilidad de obtener un par en una mano de {tamano_mano} barajas es {probabilidad_par}')
 
 
 if __name__ == '__main__':
-    barajas = crear_baraja()
-    tamaño_mano = int(input('de que tamaño quieres que sea el tamaño de la mano?? '))
-    intentos = int(input('cauntas veces quieres generar la simulaicon?? '))
-    #mano = obtener_mano(barajas, tamaño_mano)
-    print(main(tamaño_mano, intentos))
+    tamano_mano = int(input('De cuantas barajas sera la mano: '))
+    intentos = int(input('Cuantos intentos para calcular la probabilidad: '))
 
-<h1>Calculo de pi</h1>
+    main(tamano_mano, intentos)
+```
 
+## Cálculo de PI
+
+Calcularemos PI con puntos al azar esparcidos en un plano cartesiano utilizando los scripts de **desviación estándar** y **media** que creados anteriormente. Queremos tener un **95% de certeza**, entonces para ello realizaremos el cálculo para 1/2 del área de un circulo, optimizando nuestros recursos.
+
+```py
 import random
-from varianza import desviacion_estandar
+import math
+from estadisticas import desviacion_estandar, media
 
+def aventar_agujas(numero_de_agujas):
+    adentro_del_circulo = 0
 
-def aventar_agujas(numero_agujas):
-    
-    dentro_del_circulo = 0
-    
-
-    for _ in range(numero_agujas):
-        #random nos retorna un valor entre cero y uno. Pero 
-        #lo que queremos es obtener es uno o menos uno de forma
-        #aleatoria, para ello lo que hacmeos es que lo multiplicamos 
-        #de forma aletaria por uno o menos uno
-        x = random.random() * random.choice([1,-1])
-        y = random.random() * random.choice([1,-1])
-        distancia_desde_el_centro = (x**2 + y**2)**0.5
+    for _ in range(numero_de_agujas):
+        x = random.random() * random.choice([-1, 1])
+        y = random.random() * random.choice([-1, 1])
+        distancia_desde_el_centro = math.sqrt(x**2 + y**2)
 
         if distancia_desde_el_centro <= 1:
-            dentro_del_circulo += 1
-        # elif distancia_desde_el_centro < 1:
-        #     dentro_cuadrado += 1
-    return (4 * dentro_del_circulo) / numero_agujas 
+            adentro_del_circulo += 1
+
+    # La variable adentro_del_circulo representa 1/4 del área del círculo,
+    # y como solo utilizaremos 1/2 vamos a multiplicarlo por 2.
+    return (2 * adentro_del_circulo) / numero_de_agujas
 
 
-                              #las veces que vamos a correr la simulacion
-def estimacion(numero_agujas, numero_intentos):
-    estimaciones_pi = [ ]
-    for _ in range(numero_intentos):
-        estimacion_pi = aventar_agujas(numero_agujas)
-        estimaciones_pi.append(estimacion_pi)
+def estimacion(numero_de_agujas, numero_de_intentos):
+    estimados = []
+    for _ in range(numero_de_intentos):
+        estimacion_pi = aventar_agujas(numero_de_agujas)
+        estimados.append(estimacion_pi)
 
-    media_estimados = sum(estimaciones_pi) / len(estimaciones_pi)
-    sigma = desviacion_estandar(estimaciones_pi)
+    media_estimados = media(estimados)
+    sigma = desviacion_estandar(estimados)
+
+    # La variable media_estimados tiene los resultados sobre 1/2 del área del
+    # círculo. Para obtener la estimación de PI completo lo vamos a multiplicar por 2.
+    print(f'Est={round(media_estimados, 5) * 2}, sigma={round(sigma, 5)}, agujas={numero_de_agujas}')
+
     return (media_estimados, sigma)
 
+def estimar_pi(precision, numero_de_intentos):
+    numero_de_agujas = 1000
+    sigma = precision
 
-#en esta estimacion le meto una aproximacion al calculo
-def estimar_pi(precision, numero_intentos):
-    numero_agujas = 1000
-    sigma = precision#inicializamos sigma en precision
+    while sigma >= precision / 1.96:
+        media, sigma = estimacion(numero_de_agujas, numero_de_intentos)
+        numero_de_agujas *= 2
 
-    while  sigma >= precision/1.96:
-        media, sigma = estimacion(numero_agujas, numero_intentos)
-        numero_agujas *= 2
     return media
 
-
-
 if __name__ == '__main__':
-    print(estimar_pi(0.01, 10))
+    estimar_pi(0.01, 1000)
+```
 
+Vamos a la consola y ejecutamos nuestro programa.
 
-<h1>Muestreo</h1>
+```bash
+python3 calculo_pi.py   # Ejecutamos nuestro script.
 
-El muestreo es el proceso mediante el cual obtenemos una muestra de una poblacion con la finalidad de estimar valores o corroborar hipótesis. El muestreo es importante cuando por ejemplo no tenemos la capacidad de computo suficiente para hacer todos los calculos.
+# Y estos serán nuestros resultados.
+Est=3.14234, sigma=0.02594, agujas=1000
+Est=3.13966, sigma=0.01795, agujas=2000
+Est=3.143, sigma=0.01272, agujas=4000
+Est=3.14076, sigma=0.00949, agujas=8000
+Est=3.14142, sigma=0.00678, agujas=16000
+Est=3.14154, sigma=0.00457, agujas=32000
+```
 
-Es importante saber que las muestras tienden a tener el mismo comportamiento de la poblacion original, gracias a esto podemos llegar a conclusiones validas para la poblacion original.
+# Muestreo e Intervalos de Confianza
 
-Hasta ahora el tipo de muestreo que hemos utilizado es el muestreo probabilistico, el cual consiste en seleccionar la muestra de forma aleatoria. Este tipo de muestreo tiene dos formas principales de usarse:
+## Muestreo
 
--**En un muestreo aleatorio:** en este tipo de muestreo cualquier miembro de la poblacion puede ser escogido con la misma probabilidad. Este tipo de muestreo lo deberiamos hacer cuando la poblacion tiene caracteristicas similares.
+El **muestreo** es muy importante cuando no tenemos acceso a toda la población que queremos explorar. Uno de los grandes descubrimientos de la estadística es que las **muestras aleatorias** tienden a mostrar las mismas propiedades de la población objetivo. Hasta este punto todos los **muestreos** que hemos hecho son de tipo **probabilísticos**.
 
--**En un muestreo estratificado:** en este tipo de muestreo primero se divide a la poblacion en subgrupos para despues seleccionar aleatoriamente a miembros de estos subgrupos. Esto se realiza con la finaidad de evitar sesgos en la investigacion. Este tipo de muestreo lo deberiamos realizar cuando existen subgrupos dentro de nuestra poblacion. 
+En un **muestreo aleatorio** cualquier miembro de la población tiene la misma probabilidad de ser escogido.
 
-<h1>Teorema del limite central</h1>
+En un **muestreo estratificado** tomamos en consideración las características de la población para partirla en subgrupos y luego tomamos muestras de cada subgrupo, esto incrementa la probabilidad de que el muestreo sea representativo de la población.
 
-Este teorema nos permite convertir culaquier tipo de distribucion a la distribucion normal. El teorema funciona de la siguiente manera, de una poblacion de la cual no sabemos su distribucion cogemos una muestra de tamaño n y sacamos la media de dicha muestra. Repetimos este proceso unas cuantas veces y como el teorema del limite central me dice que si el tamaño de la muestra es suficientemente grande, la distribucion de esas medias muestrales va a ser aproximadamente la distribucion normal. Esto quiere decir que cuanto mayor sea el tamaño de la muestra, la distribucion de esas medias muestrales va a tender a ser normal con mayor exactitud.
+## Teorema del Límite Central
 
-<h1>¿Cómo trabajar con datos experimentales?</h1>
+El **teorema del límite central** es uno de los teoremas más importantes de la estadística. Establece que **muestras aleatorias** de cualquier distribución van a tener una **distribución normal**. Esto permite entender cualquier distribución como la **distribución normal de sus medias** y eso nos permite aplicar todo lo que sabemos de **distribuciones normales.**
 
-Los datos experimentales son aquellos que obtenemos al realizar un experimento, los obtenemos mediante el metodo científico. Cuando hablamos del metodo cientifico siempre es necesario empezar con una teoria que queremos validar o demostrar que es falsa. Una vez ya hemos identificado nuestra teoria, el siguiente paso es realizar experimentos que nos permitan verficar o falsear nuestra hipotesis.
+Mientras más muestras obtengamos, mayor será la similitud con la distribución normal. Mientras la muestra sea de mayor tamaño, la desviación estándar será menor.
 
-<h1>Regresion lineal</h1>
-La regresion lineal es una tecnica que nos permite aproximar una funcion a un conjunto de datos obtenidos de manera experimental.
+<div align="center"> 
+  <img src="readme_img/limite-central.png" width="70%">
+</div>
+
+# Datos Experimentales
+
+## ¿Cómo trabajar con datos experimentales?
+
+Los **datos experimentales** son aquellos que se generan a través del **método científico**.
+
+- Con el **método científico** es necesario comenzar con una _teoría_ o _hipótesis_ sobre el resultado al que se quiere llegar. 
+- Basado en la _hipótesis_ se debe crear un experimento para **validad** o **falsear** la _hipótesis_.
+- Se **valida** o **falsea** una _hipótesis_ midiendo la diferencia entre las mediciones experimentales y aquellas mediciones predichas por la _hipótesis_.
+
+## Regresión Lineal
+
+La **regresión lineal** nos permite aproximar una función a un conjunto de datos obtenidos de manera experimental. No necesariamente permite aproximar funciones lineales, sino que sus variantes permiten aproximar cualquier **función polinómica.**
+
+Para ver un ejemplo de regresiones lineales en _Python_ en el siguiente enlace puedes acceder a ver un ejemplo: [Collab - Regresión Lineal.](https://colab.research.google.com/drive/1c0Lx0xQyxuoZsnVKZzMFcANykA5VWN5F)
