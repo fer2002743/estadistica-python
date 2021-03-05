@@ -6,7 +6,7 @@
 </div>
 
 <h1>Tabla de contenidos</h1>
-[objeticos](objetivos:)
+[objeticos](https://github.com/fer2002743/estadistica-python#objetivos)
 <h1>objetivos:</h1>
 
 - Aprender a usar la Programacion Dinamica para hacer mas eficientes los problemas de optimizacion.
