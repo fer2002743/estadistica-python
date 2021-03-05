@@ -1,9 +1,12 @@
-  <h1>Programación Dinámica y Estocástica con Python</h1>
+  <h2>Programación Dinámica y Estocástica con Python</h2>
 </div>
 
 <div align="center"> 
   <img src="http://clipart-library.com/images_k/python-logo-transparent/python-logo-transparent-5.png" width="250">
 </div>
+
+<h1>Tabla de contenidos</h1>
+-[objetivos](**objetivos**)
 
 <h1>objetivos:</h1>
 
