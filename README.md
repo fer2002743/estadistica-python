@@ -6,7 +6,7 @@
 </div>
 
 <h1>Tabla de contenidos</h1>
-[https://github.com/fer2002743/estadistica-python#objetivos](objetivos)
+<a href = "https://github.com/fer2002743/estadistica-python#objetivos">objetivos</a>
 <h1>objetivos:</h1>
 
 - Aprender a usar la Programacion Dinamica para hacer mas eficientes los problemas de optimizacion.
