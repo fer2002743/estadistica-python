@@ -341,7 +341,7 @@ La distribucion normal es una de las ditribuciones de probabilidad de variable c
 La distribucion normal se puede definir completamente mediante su media y su desviacion estandar, es decir, si sabemos la media y la desviacion estandar podemos calcular la distribucion normal. La distribucion normal nos permite calcular la probabilidad de que algo suceda usando la **regla empirica**, la cual veremos con posterioridad.
 
 <div align="center"> 
-  <img src="https://economipedia.com/wp-content/uploads/Captura-de-pantalla-2019-09-10-a-les-11.09.35.png" width="250">
+  <img src="https://economipedia.com/wp-content/uploads/Captura-de-pantalla-2019-09-10-a-les-11.09.35.png" width="500">
 </div>
 
 como podemos apreciar en la imagen la distribucion normal es simetrica respecto de su media.
@@ -532,7 +532,7 @@ show(plot)
 Este es la visualizacion obtenida:
 
 <div align="center"> 
-  <img src="https://static.platzi.com/media/user_upload/pi-cc064ae6-6b9f-4d89-b7b2-3b5cc95a8830.jpg" width="250">
+  <img src="https://static.platzi.com/media/user_upload/pi-cc064ae6-6b9f-4d89-b7b2-3b5cc95a8830.jpg" width="500">
 </div>
 
 # Muestreo e Intervalos de Confianza
